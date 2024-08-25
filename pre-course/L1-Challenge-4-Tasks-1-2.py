@@ -5,6 +5,8 @@ def outed(meet, boss):
     return 'Nice Work Champ!'
 
 
+
+
 def boredom(staff):
     score_dic = {"accounts": 1, "finance": 2, "canteen": 10, "regulation": 3, "trading": 6, "change": 6, "IS": 8, "retail": 5, "cleaning": 4, "pissing about": 25}
     score = 0
@@ -17,3 +19,14 @@ def boredom(staff):
         return 'i can handle this'
     else:
         return 'party time!!'
+    
+
+
+
+from collections import Counter 
+
+
+def topKFrequent(self, words, k):
+        freq = Counter(words)
+        s_list = sorted(freq.keys(), key = lambda x: (-freq[x], x))
+        return s_list[:k]
