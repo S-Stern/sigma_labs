@@ -3,18 +3,22 @@ from sys import exit
 
 
 def start() -> None:
-    print("Welcome to Sigma Labs' number guessing game!")
+    print("""Welcome to Sigma Labs' number guessing game!
+The game will randomly select a number between 1 and 1000.
+You will then be able to guess the number.
+The game will tell you if you are too low or too high, and allow you to guess again.
+Good luck!""")
 
-def game() -> int:
-    ans = randint
-    last_guess = float("inf")
+def game() -> tuple:
+    ans = randint(1, 1000)
+    last_guess = None
     guesses = 0
     win = False
 
     for i in range(1000):
         guess, is_valid = get_guess()
         if not is_valid:
-            break
+            continue
         if guess == ans:
             win = True
             break
@@ -45,7 +49,7 @@ def bad_guess(ans: int, guess: str) -> None:
 
 def end(res: tuple) -> None:
     if res[0]:
-        print(f"Congratulations! You won with {tuple[1]} guesses.")
+        print(f"Congratulations! You won with {res[1]} guesses.")
     else:
         print("Apologies; you exceeded the maximum of 1000 guesses and the program terminated.")
     return
