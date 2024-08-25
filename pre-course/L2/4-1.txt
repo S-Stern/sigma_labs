@@ -1,3 +1,11 @@
 Global scope:
+    The largest domain of a file, accessible by all functions within it unless naming issues arise 
+    (i.e. unless within a given local scope a global variable name is defined without using the global keyword). 
+    In python, variables can be declared globally using the global keyword, or by declaring them outside of any function.
+    Global variables can only be modified within functions by using the global keyword.
+
 
 Local scope:
+    The local scope is the domain of the relevant function. 
+    This will be smaller than global scope unless the entire file is a single function.
+    Local scope can be expanded using the global and nonlocal keywords.
