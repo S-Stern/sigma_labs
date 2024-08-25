@@ -2,33 +2,37 @@ from random import randint
 from sys import exit
 
 
-def game() -> tuple:
+def start() -> None:
+    print("Welcome to Sigma Labs' number guessing game!")
+
+def game() -> int:
     ans = randint
     last_guess = float("inf")
     guesses = 0
     win = False
 
     for i in range(1000):
-        guess = get_guess()
-        if not type(guess) == int:
+        guess, is_valid = get_guess()
+        if not is_valid:
             break
         if guess == ans:
             win = True
             break
+        bad_guess(ans, guess)
         if guess != last_guess:
             last_guess = guess
             guesses += 1
 
-    exit("Apologies; you exceeded the guess limit and the program terminated.")
+    return (win, guesses)
 
 
 def get_guess() -> tuple:
     guess = input("Please enter your next guess here: ")
     try:
-        return int(guess)
+        return (int(guess), True)
     except:
         print("Please ensure your guess is an integer.")
-        return guess
+        return (0, False)
 
 
 def bad_guess(ans: int, guess: str) -> None:
@@ -37,10 +41,6 @@ def bad_guess(ans: int, guess: str) -> None:
     else:
         print("Sorry, your guess was too high.")
     return
-
-
-def start() -> None:
-    print("Welcome to Sigma Labs' number guessing game!")
 
 
 def end(res: tuple) -> None:
