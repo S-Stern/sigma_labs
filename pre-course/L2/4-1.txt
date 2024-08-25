@@ -8,4 +8,4 @@ Global scope:
 Local scope:
     The local scope is the domain of the relevant function. 
     This will be smaller than global scope unless the entire file is a single function.
-    Local scope can be expanded using the global and nonlocal keywords.
+    Within python, local scope can be expanded using the global and nonlocal keywords.
