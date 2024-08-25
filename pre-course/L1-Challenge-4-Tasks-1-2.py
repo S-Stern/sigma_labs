@@ -30,3 +30,24 @@ def topKFrequent(self, words, k):
         freq = Counter(words)
         s_list = sorted(freq.keys(), key = lambda x: (-freq[x], x))
         return s_list[:k]
+
+
+
+
+
+def decodeMessage(self, key, message):
+    codex = {" ": " "}
+    i = 0
+    for letter in key:
+        if letter in codex:
+            continue
+        codex[letter] = chr(97 + i)
+        i += 1
+        if len(codex) >= 27:
+            break
+    
+    decrypted = ""
+    for char in message:
+        decrypted += codex[char]
+    
+    return decrypted
