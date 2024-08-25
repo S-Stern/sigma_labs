@@ -5,24 +5,25 @@ def print_all(people_dict: dict) -> None:
     for person in people_dict:
         print(f"Name: {person}")
         print(f"Age: {people_dict[person]["age"]}")
-        print(f"Employed: {people_dict[person]["employed"]}")
+        print(f"Employed: {people_dict[person]["employed"]}\n")
     
     return
 
 
 def prompt(people_dict: dict) -> dict:
-    choice = input("What action would you like to perform? (Add/Remove)")
+    choice = input("What action would you like to perform? (Add/Remove) ")
     if choice == "Add":
         add_person(people_dict)
     elif choice == "Remove":
         remove_person(people_dict)
+    return people_dict
 
 
 def add_person(people_dict: dict) -> None:
     name = input("Name: ")
     age = input("Age: ")
     employed = input("Employed: ")
-    people_dict[name] = {"Age": age, "Employed": employed}
+    people_dict[name] = {"age": age, "employed": employed}
     return people_dict
 
 
