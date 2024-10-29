@@ -1,0 +1,18 @@
+Welcome to my implementation of Conway's Game of Life.
+This is a lightweight implementation of the game, relying on python's rich file for display.
+
+In order to run the game you must have rich installed.
+If you do not, it is advisable to set up a virtual environment using venv, the installing it using pip within your environment.
+Once you have pip installed and accessable, simply execute 'python game.py' in your terminal.
+Congratulations! You ran your first game of life.
+
+In order to edit the starting conditions, you will need to look at the 'config' file.
+This file containsthe five named perameters which dictate the game's starting conditions, which are listed below, along with their default values:
+display-height: 30 #this contains the height of the board
+display-width: 30 #this dictates the width of the board
+refresh-rate: 2 #this dictates the number of times that the board will progress every second
+seed: ./seeds/10cellinfinitegrowth.cells #this dictates which cells are living at the start of the game; see further details below
+If these perameters are incorrectly named, the program will not read them, and will default to the above-given values.
+Most are self explanitory, but seed requires some explaination:
+The value given should be the path to a file with the extension ".cells"
+For an example of these files, have a look at the contents of ./seeds/example.cells

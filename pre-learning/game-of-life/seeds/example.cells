@@ -1,0 +1,14 @@
+!These are files designed specifically for this purpose
+!They beign with comments prepended by exclaimation marks
+!with newline characters for line-breaks, .'s representing dead cells, and O's representing live cells
+!for the alleviation of doubt, live cells are represented by the capital letter 'O', NOT the arabic numeral '0'
+!for example, to produce the board starting with
+! 0 
+!000
+! 0 
+!you would have the following uncommented code
+.O.
+OOO
+.O.
+!If you like, you can use this as a seed, just change the seed-file in your config to ./seeds/example.cells
+!You are welcome to design your own, or go to WEBSITE to find more.
